@@ -10,14 +10,14 @@ const BannerItem = ({ slide }) => {
                 <img src={image} alt="" className="carousel-item relative w-full rounded-xl" />
             </div>
             <div className="absolute flex justify-end transform -translate-y-1/2 left-16 top-1/4">
-                <h1 className='text-6xl font-bold text-white'>
+                <h1 className='text-3xl font-bold text-white'>
                     Affordable <br />
                     Price for car <br />
                     Servicing
                 </h1>
             </div>
             <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-1/2 w-2/5">
-                <p className='text-xl text-white'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                <p className='text-white'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
             </div>
             <div className="absolute flex justify-start transform -translate-y-1/2 left-24 top-3/4 w-2/5">
                 <button className="btn btn-warning mr-5">Warning</button>
