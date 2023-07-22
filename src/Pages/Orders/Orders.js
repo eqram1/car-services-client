@@ -6,7 +6,7 @@ const Orders = () => {
     const [orders, setOrders] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5001/orders?email=${user.email}`)
+        fetch(`https://car-services-server.vercel.app/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user?.email])

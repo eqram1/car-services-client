@@ -24,7 +24,7 @@ const CheckOut = () => {
             message
         }
 
-        fetch('http://localhost:5001/orders', {
+        fetch('https://car-services-server.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
