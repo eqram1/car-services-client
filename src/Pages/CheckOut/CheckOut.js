@@ -23,6 +23,24 @@ const CheckOut = () => {
             phone,
             message
         }
+
+        fetch('http://localhost:5001/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    alert('Order placed successfully')
+                    form.reset();
+                }
+            })
+            .catch(er => console.error(er));
+
     }
     return (
         <div>
@@ -32,10 +50,10 @@ const CheckOut = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                     <input name='firstName' type="text" placeholder="First name" className="input input-ghost w-full input-bordered" />
                     <input name='lastName' type="text" placeholder="Last name" className="input input-ghost w-full input-bordered" />
-                    <input name='Phone' type="text" placeholder="Your phone" className="input input-ghost w-full input-bordered" />
+                    <input name='Phone' type="text" placeholder="Your phone" className="input input-ghost w-full input-bordered" required />
                     <input name='Email' type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full input-bordered" readOnly />
                 </div>
-                <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Your message"></textarea>
+                <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Your message" required></textarea>
                 <input className='btn btn-primary' type="" name="" value="Place your order" />
             </form>
         </div>
